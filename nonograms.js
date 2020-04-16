@@ -1,24 +1,31 @@
 "use strict";
 (function () {
   function load() {
-    clicker();
+    /* clicker(); */
     const btn = document.getElementById("btn");
     btn.addEventListener("click", button);
+
+    const box = document.querySelectorAll(".box");
+    clicker(box);
+    /* const remove = document.querySelectorAll(".filled");
+    ximg(remove); */
   }
 
   /* box click event */
-  function clicker() {
-    const box = document.querySelectorAll(".box");
-
-    for (const boxes of box) {
-      if (boxes.className == "filled") {
-        boxes.addEventListener("click", (event) => {
-          boxes.classList.add("crosses-out");
-        });
-      }
+  function clicker(x) {
+    for (const boxes of x) {
+      
       boxes.addEventListener("click", (event) => {
         window.alert("You clicked a tile");
         boxes.classList.add("filled");
+      });
+    }
+  }
+  function ximg(y) {
+    for (const boxrem of y) {
+      boxrem.addEventListener("click", (event) => {
+        boxrem.classList.remove("filled");
+        boxrem.classList.add("crosses-out");
       });
     }
   }
