@@ -12,6 +12,10 @@ h1 {
 .box {
   border: 1px solid #111;
 }
+.box:hover {
+  border: 1px solid #111;
+  box-shadow: 0px 0px 2px 2px #111111;
+}
 
 .box,
 .col-num-box,
@@ -194,4 +198,13 @@ h1 {
 
 .twenty-five #empty-square {
   height: 60px;
+}
+#btn {
+  margin-top: 20px;
+  width: 200px;
+  height: 60px;
+}
+.crosses-out {
+  background-image: url(img/x.png);
+  background-size: 100%;
 }
