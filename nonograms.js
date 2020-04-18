@@ -5,30 +5,28 @@
     const btn = document.getElementById("btn");
     btn.addEventListener("click", button);
 
-    const box = document.querySelectorAll(".box");
-    clicker(box);
-    /* const remove = document.querySelectorAll(".filled");
-    ximg(remove); */
+    clicker();
   }
 
   /* box click event */
-  function clicker(x) {
-    for (const boxes of x) {
-      
+  function clicker() {
+    const box = document.querySelectorAll(".box");
+
+    for (const boxes of box) {
       boxes.addEventListener("click", (event) => {
         window.alert("You clicked a tile");
-        boxes.classList.add("filled");
+        if (boxes.classList.contains("filled")) {
+          boxes.classList.remove("filled");
+          boxes.classList.add("crosses-out");
+        } else if (boxes.classList.contains("crosses-out")) {
+          boxes.classList.remove("crosses-out");
+        } else {
+          boxes.classList.add("filled");
+        }
       });
     }
   }
-  function ximg(y) {
-    for (const boxrem of y) {
-      boxrem.addEventListener("click", (event) => {
-        boxrem.classList.remove("filled");
-        boxrem.classList.add("crosses-out");
-      });
-    }
-  }
+
   function button() {
     const rem = document.querySelectorAll(".box");
     const con = confirm("Do you want reset ALL??");
